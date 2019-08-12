@@ -14,16 +14,22 @@ function menu()
     return selection
 end
 
+# You could add the type of data in the parameters.
 function addition(number1::Int, number2::Int)
     return number1 + number2
 end
 
+# Also you could define a function in a line and send the parameters 
+# with the expected data type
 subtraction(number1::Int, number2::Int) = number1 - number2
 
+# But isn't necessary to define the type of data in the parameters,
+# you could only send it 
 function multiplication(number1, number2)
     return number1 * number2
 end
 
+# It's also not necessary in the functions of a line.
 division(number1, number2) = number1 / number2
 
 function select_operation(option, number1, number2)
@@ -42,6 +48,7 @@ function select_operation(option, number1, number2)
             response = division(number1, number2)
         end 
     end
+    # If you want return something you should use return expression.
     return response
 end
 
@@ -57,6 +64,6 @@ while option != "q"
     println("****************")
     println(string("Response: ", response))
     println("****************")
-    # To understant (global ...), I should find what is scoping in variables
+    # To understant (global ...), is necessary to find what is scoping in variables
     global option = menu()
 end
